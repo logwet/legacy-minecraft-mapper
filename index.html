@@ -12,8 +12,18 @@
     alert('This site requires the use of a browser that supports JavaScript modules. Sorry!');
 </script>
 <template id="mapping-input">
+    <p class="mapping-info">
+        <b>Using Mappings: </b>
+        <a class="yarn-version" style="font-weight: bold"></a>
+        <em>Classes: </em><span class="classes"></span>
+        <em>Methods: </em><span class="methods"></span>
+        <em>Fields: </em><span class="fields"></span>
+    </p>
     <p>Please enter the stack trace or thread-dump in the following textfield:</p>
-    <button>Map!</button>
+    <div style="display: flex">
+        <button>Map!</button>
+        <div class="mapping-result"></div>
+    </div>
     <textarea style="width: 100%; height: 80vh"></textarea>
 </template>
 <template id="version-select">
