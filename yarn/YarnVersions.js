@@ -15,7 +15,8 @@ export default class YarnVersions {
                 });
             }
             const curVersion = versionToLatestYarn.get(gameVersion);
-            if (curVersion && curVersion.build > versionJson.build && curVersion.stable) {
+            // if (curVersion && curVersion.build > versionJson.build && curVersion.stable) {
+            if (curVersion && curVersion.build > versionJson.build) {
                 continue; // Already have a newer stable build
             }
             versionToLatestYarn.set(gameVersion, versionJson);
