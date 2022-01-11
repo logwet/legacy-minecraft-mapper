@@ -3,9 +3,9 @@ import error from "../utils/error.js";
 import parseMappings from "./parseMappings.js";
 async function downloadMappings(version, statusCallback) {
     const yarnVersion = version.gameVersion + version.separator + version.build;
-    const url = `${YARN_JAR_URL}/${yarnVersion}/yarn-${yarnVersion}-v2.jar`;
+    const url = `https://logwet-cors-proxy.herokuapp.com/${YARN_JAR_URL}/${yarnVersion}/yarn-${yarnVersion}-v2.jar`;
     statusCallback(`Requesting ${url}...`);
-    const response = await fetch(url, { mode: 'no-cors' });
+    const response = await fetch(url);
     if (!response.ok || !response.body) {
         console.error("Failed to download Yarn mappings: ", response);
         error("Failed to download Yarn mappings from " + url);
