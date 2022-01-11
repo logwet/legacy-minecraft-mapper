@@ -5,7 +5,7 @@ async function downloadMappings(version, statusCallback) {
     const yarnVersion = version.gameVersion + version.separator + version.build;
     const url = `${YARN_JAR_URL}/${yarnVersion}/yarn-${yarnVersion}-v2.jar`;
     statusCallback(`Requesting ${url}...`);
-    const response = await fetch(url);
+    const response = await fetch(url, { mode: 'no-cors' });
     if (!response.ok || !response.body) {
         console.error("Failed to download Yarn mappings: ", response);
         error("Failed to download Yarn mappings from " + url);
